@@ -12,9 +12,9 @@ function name(){return stations[station][ex]}
 function fmt(n){n=Math.max(0,Math.ceil(n));return String(Math.floor(n/60)).padStart(2,"0")+":"+String(n%60).padStart(2,"0")}
 function announce(s){if(!("speechSynthesis" in window))return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(s);u.rate=1.08;speechSynthesis.speak(u)}catch(e){}}
 const clips={
-"Single-arm bent-over row":"videos/single-arm-dumbbell-row.mp4",
-"Kettlebell / dumbbell swing":"videos/kettlebell-swing.mp4",
-"Kettlebell / dumbbell goblet squat":"videos/goblet-squat-dumbbell.mp4"
+"Single-arm bent-over row":"single-arm-dumbbell-row.mp4",
+"Kettlebell / dumbbell swing":"kettlebell-swing.mp4",
+"Kettlebell / dumbbell goblet squat":"goblet-squat-dumbbell.mp4"
 };
 let shownVideo="";
 function demoExercise(){if(phase==="rest"){if(ex<2)return stations[station][ex+1];if(round<3)return stations[station][0];if(station<5)return stations[station+1][0]}if(phase==="water")return stations[station+1][0];return name()}
